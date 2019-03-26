@@ -25,9 +25,9 @@ login.onclick = function existingUser ()
         if(username === registeredUser[i].username && password === registeredUser[i].password) 
         {
             alert("Welcome back " + username)
-            document.location.href = "Group-Work/ActivityRegisteredUser.html";
+            document.location.href = "ActivityRegisteredUser.html";
            return;
         } 
     }
-    alert("Wrong username or password")
+    alert("Wrong username or password!")
 }
