@@ -21,8 +21,8 @@ function existingUser() {
     for (i = 0; i < registeredUser.length; i++) {
         if(username == regsiteredUser[i].username && password == registeredUser[i].password) {
             console.log(username + " is logged in!")
-            return
+            return false;
         }
     }
-    alert("Wrong username or password!")
+    alert("Wrong username or password!");
 }
