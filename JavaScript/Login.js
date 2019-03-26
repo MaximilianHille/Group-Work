@@ -24,5 +24,5 @@ function existingUser() {
             return;
         }
     }
-    alert("Wrong username or password!");
+    console.log("Wrong username or password!");
 }
