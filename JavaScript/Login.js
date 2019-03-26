@@ -13,17 +13,21 @@ var registeredUser = [
     }
 ]
 
-function existingUser() {
 
+var login = document.getElementById("login")
+
+login.onclick = function () 
+{
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
 
     for (i = 0; i < registeredUser.length; i++) {
-        if(username == registeredUser[i].username && password == registeredUser[i].password) {
-            alert(username + " is logged in!")
-            return;
-        } else {
-            alert("Wrong username or password")
-        }
+        if(username === registeredUser[i].username && password === registeredUser[i].password) 
+        {
+            alert("Welcome back " + username)
+            document.location.href = "Activity.html";
+           return;
+        } 
     }
+    alert("Wrong username or password")
 }
