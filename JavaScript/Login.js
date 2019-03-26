@@ -19,7 +19,7 @@ function existingUser() {
     var password = document.getElementById("psw").value
 
     for (i = 0; i < registeredUser.length; i++) {
-        if(username == regsiteredUser[i].username && password == registeredUser[i].password) {
+        if(username == registeredUser[i].username && password == registeredUser[i].password) {
             console.log(username + " is logged in!")
             return false;
         }
