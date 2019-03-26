@@ -16,7 +16,7 @@ var registeredUser = [
 
 var login = document.getElementById("login")
 
-login.onclick = function () 
+login.onclick = function existingUser () 
 {
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
@@ -25,7 +25,7 @@ login.onclick = function ()
         if(username === registeredUser[i].username && password === registeredUser[i].password) 
         {
             alert("Welcome back " + username)
-            document.location.href = "Activity.html";
+            document.location.href = "Group-Work/ActivityRegisteredUser.html";
            return;
         } 
     }
