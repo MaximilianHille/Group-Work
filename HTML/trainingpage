@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> TRAINING AND RACE CALCULATOR </title>
+		<link rel="stylesheet" type="text/css" href="finaltrial.css">
+    </head>
+    <font face="verdana">
+
+    <body background="runneer.jpg">
+            
+
+           <h1>Race calculator</h1>
+           <p>Fill in information
+            <br>
+            <br>
+            <br>
+
+           </p>
+
+            <p>Distance
+            <br>
+            <br>
+            <input type="text" placeholder="kilometers" id="kilometers"/> 
+                </p>
+
+                <br>
+                <br>
+
+                <p>Finish Time
+                <br>
+                <input type="text" placeholder="hours" id="hours"/> : <input type="text" placeholder="minutes" id="minutes"/> : <input type="text" placeholder="seconds" id="seconds"/>
+                
+                </p>
+
+                <br>
+                <br>
+
+                <p>Pace
+                <br>
+                <input type="text" placeholder="minutes" id="minutes"/> : <input type="text" placeholder="seconds" id="seconds"/> 
+                
+                </p>
+
+                <br>
+                <br>
+            <p><button onclick="myFunction()">Calculate</button id="calculate_btn">
+            </p>
+                <br>
+                <br>
+                
+            
+                 
+
+            <p>Calculate
+                
+            </p>
+
+                <br>
+                <br>  
+                <br>
+            <p>Output
+                <br>
+                <input type="output" name="output" id="output">
+                <br>  
+            </p> 
+                   
+                <br>
+            <p>Split Time
+                <br>
+                <input type="time" name="time" id="time">
+                <br> 
+                <br>
+            </p>
+            
+         
+           
+
+
+
+            
+        
+           
+            
+        
+          
+            
+      
+
+    <script src="finaltrial1.js"></script>
+
+            
+    </body></font>
+</html>
+
