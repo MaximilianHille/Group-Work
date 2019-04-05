@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tracking Table</title>
+    <style>
+        .container{overflow: hidden}
+        .tab{float: left;}
+        .tab-2{margin-left: 50px}
+        .tab-2 input{display: block; margin-bottom: 10px}
+        .tab-2 select{display: block; margin-bottom: 10px}
+        tr{transition:all .25s ease-in-out}
+        tr:hover{background-color:silver}
+
+        </style>
+  </head>
+
+  <body>
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Category</th>
+                        <th>Distance in KM</th>
+                        <th>Finish Time</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab tab-2">
+                Date: <input type="date" name="date" id="date">
+                Location: <input type="text" name="location" id="location">
+                Category: <select id="category">
+                        <option value="Street">Street</option>
+                        <option value="Cross">Cross</option>
+                        <option value="Track">Track</option>
+                        <option value="Beach">Beach</option>
+                    </select>
+                Distance: <input type="number" name="distance" id="distance">
+                Finish Time: <input type="text" name="finishTime" id="finishTime" placeholder="hh:mm:ss">
+            
+                <button onclick="addHTMLTableRow()">Add</button>
+                <button onclick="editHTMLTableSelectedRow()">Edit</button>
+                <button onclick="removeSelectedRow()">Remove</button>
+            </div>
+        </div>
+
+             
+  </body>
+
+        <script src="./JavaScript/Tracking.js"></script>
+        <script src="./JavaScript/DB.js"></script>
+        <script src="./JavaScript/Registration.js"></script>
+        <script src="./JavaScript/Login.js"></script>
+
+     
+</html>
+
 
