@@ -71,7 +71,7 @@ function addHTMLTableRow()
 // this is the function in order to display selected row data into input text
 function selectedRowToInput()
 {
-    for (var i = 0; i < table.rows.length; i++)
+    for (var i = 1; i < table.rows.length; i++) // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
     {
         table.rows[i].onclick = function ()
         {
