@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tutorial</title>
+    
+    <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <h1>A runner's guide to the perfect training tool</h1>
+    <p>This tool does the math for you! As a runner you can easily use it to figure out your running speed.</p>
+    <button onclick="runCode()">Click me</button>
+
+
+
+    <h2>Running Pace Caluculator</h2>
+    <h3>Type in the distance you plan to run and the time in which you'd like to run that distance to find your
+        necessary pace.</h3>
+    <p>Distance: <input type="text" placeholder="meters" id="distance" />meters</p>
+    <p>Time: <input type="text" placeholder="hours" id="hours" /> : <input type="text" placeholder="minutes"
+            id="minutes" /> : <input type="text" placeholder="seconds" id="seconds" /></p>
+    <p><button id="calculate_btn">Calculate Pace</button></p>
+    <p id="pace"></p>
+    <!–– src er lagt her da den skal fnde koden herfra, hvis vi lagde den fx. øverst vil den ikke kunne finde den... ––>
+    <script src="script.js"></script>
+</body>
+
+</html>
