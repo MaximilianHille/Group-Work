@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tutorial</title>
+    
+    <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <h1>Race calculator</h1>
+    <p>Fill in information</p>
+ 
+    <p>Distance: <input type="text" placeholder="kilometers" id="distance" /></p>
+    <p>Time: <input type="text" placeholder="hours" id="hours" /> : <input type="text" placeholder="minutes"
+            id="minutes" /> : <input type="text" placeholder="seconds" id="seconds" /></p>
+    <p><button id="calculate_btn1">Calculate</button></p>
+	
+	<br>
+	
+	<p>Fill in information</p>
+
+	<p>Distance: <input type="text" placeholder="kilometers" id="distance" /></p>
+    <p>Pace: <input type="text" placeholder="minutes" id="minutes"/> : <input type="text" placeholder="seconds" id="seconds"/></p>
+    <p><button id="calculate_btn2">Calculate</button></p>
+	
+	<br>
+
+	
+
+	<br>
+
+	<p>Calculate</p>
+	<p>Output
+		<br>
+		<p id="pace"/>
+		<br>
+	<p>Output
+		<p id="time"/>
+		<br>  
+	</p> 
+
+    <script src="mypage.js"></script>
+</body>
+
+</html>
