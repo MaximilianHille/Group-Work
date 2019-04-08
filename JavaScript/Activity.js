@@ -1,19 +1,21 @@
-document.getElementById('continue-button').onclick = function () {
+var cont = document.getElementById('continue-button');
 
-    if (document.getElementById('tracking')) {
-        document.location.href = "Tracking_Overview.html";
-        return true
+    cont.onclick = function () {
+        var selection = document.getElementById("selection").value;
+
+            if (selection == "tracking") {
+                document.location.href = "Tracking_Overview.html";
+            }
+
+            else if (selection == "race") {
+                document.location.href = "www.google.de";
+            }
+
+            else if (selection == "training") {
+                document.location.href = "www.facebook.de";
+            }
+
+            else if (selection == "chooseOption") {
+                alert ("You have to choose what to do.")
+            }
     }
-    else if (document.getElementById('race')) {
-        document.location.href = "";
-        return true;
-    }
-    else if (document.getElementById('training')) {
-        document.location.href ="";
-        return true;
-    }
-    else if (document.getElementById('choose')){
-        alert("Please choose an option.");
-        return true;
-    }
-};
