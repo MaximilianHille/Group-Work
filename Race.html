@@ -1,48 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> TRAINING AND RACE CALCULATOR </title>
+		<link rel="stylesheet" type="text/css" href="finalpage.css">
+    </head>
+    <font face="verdana">
 
-<head>
-    <meta charset="UTF-8">
-    <title>HTML Tutorial</title>
+    <body background="https://user-images.githubusercontent.com/47663310/55226105-7e1a7f00-5214-11e9-8869-d67aee062ae5.jpg">
     
-    <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
-</head>
 
-<body>
+           <h1>Race calculator</h1>
+           <p>Fill in information
+            <br>
+            <br>
+            <br>
 
-    <h1>Race calculator</h1>
-    <p>Fill in information</p>
- 
-    <p>Distance: <input type="text" placeholder="kilometers" id="distance" /></p>
-    <p>Time: <input type="text" placeholder="hours" id="hours" /> : <input type="text" placeholder="minutes"
-            id="minutes" /> : <input type="text" placeholder="seconds" id="seconds" /></p>
-    <p><button id="calculate_btn1">Calculate</button></p>
-	
-	<br>
-	
-	<p>Fill in information</p>
+        
+           </p>
 
-	<p>Distance: <input type="text" placeholder="kilometers" id="distance" /></p>
-    <p>Pace: <input type="text" placeholder="minutes" id="minutes"/> : <input type="text" placeholder="seconds" id="seconds"/></p>
-    <p><button id="calculate_btn2">Calculate</button></p>
-	
-	<br>
+            <p>Distance
+            
+            <br>
+            <select id="distance1" name="">
+                    <option value="Select distance">Select Race</option>
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                    <option value="21,1">Half-Marathon</option>
+                    <option value="25">25 km</option>
+                    <option value="42,2">Marathon</option>
+                    </select>
 
-	
+                </p>
+    
+                <p>Finish Time: <input type="text" placeholder="hours" id="hours1" /> : <input type="text" placeholder="minutes"
+                        id="minutes1" /> : <input type="text" placeholder="seconds" id="seconds1" /></p>
+                        <p><button id="calculate_btn1">Calculate</button></p>  
+                        <br>
+                        <br>
+                        <br>
+                <p>Distance
+            
+            <br>
+            <select id="distance2" name="">
+                    <option value="Select distance">Select Race</option>
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                    <option value="21,1">Half-Marathon</option>
+                    <option value="25">25 km</option>
+                    <option value="42,2">Marathon</option>
+                    </select>
 
-	<br>
+                </p>
 
-	<p>Calculate</p>
-	<p>Output
-		<br>
-		<p id="pace"/>
-		<br>
-	<p>Output
-		<p id="time"/>
-		<br>  
-	</p> 
+                
+                <p>Pace: <input type="text" placeholder="minutes" id="minutes2"/> : <input type="text" placeholder="seconds" id="seconds2"/></p>
+                <p><button id="calculate_btn2">Calculate</button></p>                
+            </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
 
-    <script src="mypage.js"></script>
-</body>
+            <p>Calculate
+                
+            </p>
 
+                <br>
+                <br>  
+                <br>
+            <p>Output
+                <br>
+                <p id="pace"/>
+                <input type="output" name="output" id="output">
+                <br>  
+            </p> 
+
+            <p>Output
+                <br>
+                <p id="time"/>
+                <input type="output" name="output" id="output2">
+                <br>  
+            </p>
+
+                   
+                <br>
+            <p>Split Time
+                <br>
+                <input type="time" name="time" id="time">
+                <br> 
+                <br>
+            </p>
+            
+         
+           
+    <script src="finalpage.js"></script>
+
+            
+    </body></font>
 </html>
