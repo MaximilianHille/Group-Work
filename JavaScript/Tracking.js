@@ -10,7 +10,8 @@ table = document.getElementById("table");
               location = document.getElementById("location").value,
               category = document.getElementById("category").value,
               distance = document.getElementById("distance").value,
-              finishTime = document.getElementById("finishTime").value;
+              finishTime = document.getElementById("finishTime").value,
+              comments = document.getElementById("comments").value;
 
           if (date === ""){
           alert ("Please fill in information");
@@ -32,6 +33,10 @@ table = document.getElementById("table");
           alert ("Please fill in information");
           isEmpty = true;
           }
+          else if (comments.length > 100) {
+              alert ("Comment too long!")
+              isEmpty = true;
+          }
           return isEmpty;
         }
 
@@ -51,17 +56,21 @@ function addHTMLTableRow()
             cell3 = newRow.insertCell (2),
             cell4 = newRow.insertCell (3),
             cell5 = newRow.insertCell (4),
+            cell6 = newRow.insertCell (5),
+
             date = document.getElementById("date").value,
             location = document.getElementById("location").value,
             category = document.getElementById("category").value,
             distance = document.getElementById("distance").value,
-            finishTime = document.getElementById("finishTime").value;
+            finishTime = document.getElementById("finishTime").value,
+            comments = document.getElementById("comments").value;
 
             cell1.innerHTML = date;
             cell2.innerHTML = location;
             cell3.innerHTML = category;
             cell4.innerHTML = distance;
             cell5.innerHTML = finishTime;
+            cell6.innerHTML = comments;
 
         // call the function to set the event to the new row --> basically we are adding out input here to the table
         selectedRowToInput();
@@ -82,6 +91,7 @@ function selectedRowToInput()
             document.getElementById("category").value = this.cells[2].innerHTML;
             document.getElementById("distance").value = this.cells[3].innerHTML;
             document.getElementById("finishTime").value = this.cells[4].innerHTML;
+            document.getElementById("comments").value = this.cells[5].innerHTML;
 
         };
     }
@@ -95,7 +105,8 @@ function editHTMLTableSelectedRow()
         location = document.getElementById("location").value,
         category = document.getElementById("category").value,
         distance = document.getElementById("distance").value,
-        finishTime = document.getElementById("finishTime").value;
+        finishTime = document.getElementById("finishTime").value,
+        comments = document.getElementById("comments").value;
 
     if(!checkEmptyInput())
     {
@@ -104,6 +115,7 @@ function editHTMLTableSelectedRow()
             table.rows[rIndex].cells[2].innerHTML = category;
             table.rows[rIndex].cells[3].innerHTML = distance;
             table.rows[rIndex].cells[4].innerHTML = finishTime;
+            table.rows[rindex].cells[5].innerHTML = comments;
     }
 
 
@@ -118,5 +130,6 @@ function removeSelectedRow()
     document.getElementById("category").value = "";
     document.getElementById("distance").value = "";
     document.getElementById("finishTime").value = "";
+    document.getElementById("comments").value = "";
 }
 
