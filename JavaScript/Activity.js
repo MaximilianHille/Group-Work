@@ -8,11 +8,11 @@ var cont = document.getElementById('continue-button');
             }
 
             else if (selection == "race") {
-                document.location.href = "www.google.de";
+                document.location.href = "Race.html";
             }
 
             else if (selection == "training") {
-                document.location.href = "www.facebook.de";
+                document.location.href = "Training.html";
             }
 
             else if (selection == "chooseOption") {
