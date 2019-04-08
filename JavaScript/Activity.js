@@ -16,6 +16,6 @@ var cont = document.getElementById('continue-button');
             }
 
             else if (selection == "chooseOption") {
-                alert ("You have to choose what to do.")
+                alert ("You have to choose what you want to do.")
             }
     }
