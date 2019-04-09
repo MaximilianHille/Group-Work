@@ -36,7 +36,7 @@ if (register) {
                     }
                 }
 
-            users.push(new User(inputUsername.value, null, null, inputUsername.value, inputPassword.value));
+            users.push(new User(null, inputLastName.value, null, inputUsername.value, inputPassword.value));
             localStorage.setItem('users', JSON.stringify(users));
             
             document.location.href = "Activity.html";
