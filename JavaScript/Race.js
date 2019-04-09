@@ -7,10 +7,10 @@ var splitTimeText = document.getElementById('split');
 if(button1) {
     button1.onclick = function() {
 
-        var kilometers = parseFloat(distance1.value);
-        var hours = parseFloat(hours1.value);
-        var minutes = parseFloat(minutes1.value);
-        var seconds = parseFloat(seconds1.value);
+        var kilometers = parseFloat(document.getElementById('distance1').value);
+        var hours = parseFloat(document.getElementById('hours1').value);
+        var minutes = parseFloat(document.getElementById('minutes1').value);
+        var seconds = parseFloat(document.getElementById('seconds1').value);
     
         var totalMinutes = hours * 60 + minutes + seconds / 60;
         var pace = totalMinutes / kilometers;
@@ -54,9 +54,9 @@ if(button1) {
 if(button2) {
     button2.onclick = function() {
     
-        var kilometers = parseFloat(distance2.value);
-        var minutes = parseFloat(minutes2.value);
-        var seconds = parseFloat(seconds2.value);
+        var kilometers = parseFloat(document.getElementById('distance2').value);
+        var minutes = parseFloat(document.getElementById('minutes2').value);
+        var seconds = parseFloat(document.getElementById('seconds2').value);
     
         var totalSeconds = kilometers * ((minutes * 60) + seconds);
         var timeHours = Math.floor( totalSeconds / 3600);
