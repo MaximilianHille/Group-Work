@@ -4,7 +4,7 @@ var cont = document.getElementById('continue-button');
         var selection = document.getElementById("selection").value;
 
             if (selection == "tracking") {
-                document.location.href = "Tracking_Overview.html";
+                document.location.href = "Tracking.html";
             }
 
             else if (selection == "race") {
