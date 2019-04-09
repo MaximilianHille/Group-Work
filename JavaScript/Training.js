@@ -11,7 +11,7 @@ if(button) {
         var minutes = parseFloat(document.getElementById('minutes').value);
         var seconds = parseFloat(document.getElementById('seconds').value);
 
-        if(isNaN(meters)) {
+        /* if(isNaN(meters)) {
             distanceInput.style.borderColor = "red";
             return;
         }
@@ -26,7 +26,7 @@ if(button) {
         if(isNaN(seconds)) {
             secondsInput.style.borderColor = "red";
             return;
-        }
+        } */
 
         var totalMinutes = hours * 60 + minutes + seconds / 60;
 
