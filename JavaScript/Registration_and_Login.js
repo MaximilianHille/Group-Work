@@ -43,7 +43,7 @@ if (register) {
       users.push(new User(inputUsername.value, null, null, inputUsername.value, inputPassword.value));
       localStorage.setItem('users', JSON.stringify(users));
     
-      document.location.href = "ActivityRegisteredUser.html";
+      document.location.href = "Activity.html";
 
     }
 
@@ -66,7 +66,7 @@ if (login)
             if(username === users[i].username && password === users[i].password) 
             {
                 alert("Welcome back " + username + "!")
-                document.location.href = "ActivityRegisteredUser.html";
+                document.location.href = "Activity.html";
                 return;
             }
         }  
