@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Training calculator</title>
+        
+        <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
+    </head>
+        <font face="verdana">
+            <body>
 
-<head>
-    <meta charset="UTF-8">
-    <title>HTML Tutorial</title>
-    
-    <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
-</head>
+                <h1>Calculate your training here.</h1>
+                    <p>Get the split times for your training on the track.</p>
+                <h2>Running Pace Caluculator</h2>
+                <h3>Type in the available information.</h3>
+                    <p>Distance: 
+                        <input type="number" placeholder="meters" id="distance"> meters</p>
+                    <p>Time:    
+                        <input type="text" placeholder="hours" id="hours"> :
+                        <input type="text" placeholder="minutes" id="minutes"> : 
+                        <input type="text" placeholder="seconds" id="seconds"></p>
 
-<body>
+                <input type="button" id="calculateBtn" value="Calculate pace">
 
-    <h1>A runner's guide to the perfect training tool</h1>
-    <p>This tool does the math for you! As a runner you can easily use it to figure out your running speed.</p>
-    
-
-
-
-    <h2>Running Pace Caluculator</h2>
-    <h3>Type in the distance you plan to run and the time in which you'd like to run that distance to find your
-        necessary pace.</h3>
-    <p>Distance: <input type="number" placeholder="meters" id="distance">meters</p>
-    <p>Time:    <input type="text" placeholder="hours" id="hours"> :
-                <input type="text" placeholder="minutes" id="minutes"> : <input type="text" placeholder="seconds" id="seconds" /></p>
-    <input type="button" id="calculateBtn" value="Calculate pace">
-    <p id="pace1000"></p>
-    <p id="pace400"></p>
-    <p id="pace100"></p>
-    <!-- src er lagt her da den skal fnde koden herfra, hvis vi lagde den fx. øverst vil den ikke kunne finde den... -->
-    <script src="script.js"></script>
-</body>
+                    <p id="totalTime"></p>
+                    <p id="pace1000"></p>
+                    <p id="pace400"></p>
+                    <p id="pace100"></p>
+            </body>
+        </font>
+        
+        <script src="test.js"></script>
 
 </html>
