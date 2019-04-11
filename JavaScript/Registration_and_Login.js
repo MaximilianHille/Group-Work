@@ -1,5 +1,4 @@
 var users = getSavedUsers(); //assigning the function we created in our other file DB.js to a variable  
-var trackings = getSavedTrackings();
 // Bind the button to a variable for later use
 var register = document.getElementById('submit-button'); // our button called "create user account" binded to the variable "register"
 var login = document.getElementById('login');
@@ -39,7 +38,7 @@ if (register) {
             }
         }
 
-        users.push(new User(null, inputLastName.value, null, inputUsername.value, inputPassword.value));
+        users.push(new User(null, inputLastName.value, null, inputUsername.value, inputPassword.value, null));
         localStorage.setItem('users', JSON.stringify(users));
 
         activeUser = inputUsername.value
