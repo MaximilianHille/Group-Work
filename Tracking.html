@@ -1,61 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Tracking Table</title>
     <style>
-        .container{overflow: hidden}
-        .tab{float: left;}
-        .tab-2{margin-left: 50px}
-        .tab-2 input{display: block; margin-bottom: 10px}
-        .tab-2 select{display: block; margin-bottom: 10px}
-        tr{transition:all .25s ease-in-out}
-        tr:hover{background-color:silver}
+        .container {
+            overflow: hidden
+        }
 
+        .tab {
+            float: left;
+        }
+
+        .tab-2 {
+            margin-left: 50px
+        }
+
+        .tab-2 input {
+            display: block;
+            margin-bottom: 10px
+        }
+
+        .tab-2 select {
+            display: block;
+            margin-bottom: 10px
+        }
+
+        tr {
+            transition: all .25s ease-in-out
+        }
+
+        tr:hover {
+            background-color: silver
+        }
     </style>
-  </head>
-    <font face="verdana">
-            <body>
-                <div class="container">
-                    <div class="tab tab-1">
-                        <table id="table" border="1">
-                            <tr>
-                                <th>Date</th>
-                                <th>Location</th>
-                                <th>Category</th>
-                                <th>Distance in KM</th>
-                                <th>Finish Time</th>
-                                <th>Comments</th>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="tab tab-2">
-                        Date: <input type="date" name="date" id="date">
-                        Location: <input type="text" name="location" id="location">
-                        Category: <select id="category">
-                                <option value="Street">Street</option>
-                                <option value="Cross">Cross</option>
-                                <option value="Track">Track</option>
-                                <option value="Beach">Beach</option>
-                            </select>
-                        Distance: <input type="number" name="distance" id="distance">
-                        Finish Time: <input type="text" name="finishTime" id="finishTime" placeholder="hh:mm:ss">
-                        Comments: <input type = "text" name = "comments" id = "comments">
-                    
-                        <input type = "button" id = "btn1" value = "Add">
-                        <input type = "button" id = "btn2" value = "Edit">                        
-                        <input type = "button" id = "btn3" value = "Remove">
-                    </div>
-                </div>
+</head>
+<font face="verdana">
 
-                    
-            </body>
-        </font>
+    <body>
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Category</th>
+                        <th>Distance in KM</th>
+                        <th>Finish Time</th>
+                        <th>Comments</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab tab-2">
+                Date: <input type="date" name="date" id="date">
+                Location: <input type="text" name="location" id="location">
+                Category: <select id="category">
+                    <option value="Street">Street</option>
+                    <option value="Cross">Cross</option>
+                    <option value="Track">Track</option>
+                    <option value="Beach">Beach</option>
+                </select>
+                Distance: <input type="number" name="distance" id="distance">
+                Finish Time: <input type="text" name="finishTime" id="finishTime" placeholder="hh:mm:ss">
+                Comments: <input type="text" name="comments" id="comments">
 
-            <script src="./JavaScript/Tracking.js"></script>
-            <script src="./JavaScript/DB.js"></script>
-            <script src="./JavaScript/Registration_and_Login.js"></script>
+                <input type="button" id="btn1" value="Add">
+                <input type="button" id="btn2" value="Edit">
+                <input type="button" id="btn3" value="Remove">
+            </div>
+        </div>
 
-     
+
+    </body>
+</font>
+
+
+<script src="./JavaScript/Class_User.js"></script>
+<script src="./JavaScript/DB.js"></script>
+<script src="./JavaScript/Registration_and_Login.js"></script>
+<script src="./JavaScript/Tracking.js"></script>
+
+
 </html>
-
