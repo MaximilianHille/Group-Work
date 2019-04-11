@@ -8,9 +8,6 @@ for (var i = 0; i < users.length; i++) {
         users[i].tracking = table.innerHTML
     }
 }
-
-if (currentUserTracking != null) {
-    table.innerHTML = currentUserTracking
 }
 
 var btn1 = document.getElementById('btn1');
