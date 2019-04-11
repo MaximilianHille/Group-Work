@@ -1,14 +1,11 @@
 var users = getSavedUsers();
-var trackings = getSavedTrackings();
 
 var rIndex;
 var table = document.getElementById("table");
 
-var currentUserTracking;
-
 for (var i = 0; i < users.length; i++) {
     if (users[i].username == activeUser) {
-        currentUserTracking = users[i].tracking
+        users[i].tracking = table.innerHTML
     }
 }
 
