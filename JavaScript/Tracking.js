@@ -8,7 +8,6 @@ for (var i = 0; i < users.length; i++) {
         users[i].tracking = table.innerHTML
     }
 }
-}
 
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
