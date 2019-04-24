@@ -39,10 +39,10 @@ if (register) {
         }
 
         users.push(new User(null, inputLastName.value, null, inputUsername.value, inputPassword.value, null));
-        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('user', JSON.stringify(users));
 
         activeUser = inputUsername.value
-        localStorage.setItem('currentUser', JSON.stringify(activeUser))
+        localStorage.setItem('activeUser', JSON.stringify(activeUser))
 
         document.location.href = "Activity.html";
     }
@@ -73,7 +73,6 @@ if (login) {
         }
 
         activeUser = username.value
-        localStorage.setItem('currentUser', JSON.stringify(activeUser))
+        localStorage.setItem('activeUser', JSON.stringify(activeUser))
     }
 }
-
