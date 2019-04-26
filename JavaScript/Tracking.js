@@ -23,14 +23,21 @@ var table = document.getElementById("table");
     if (users[i].username == activeUser) {
         users[i].tracking = table.innerHTML
     }
-}*/
+} */
 
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 
 // check the empty input and in case it is true, return the alert that something needs to be filled in
 // also possible here to do instead of "else if" a "switch" statement!!
-
+function checkTable () {
+    var rows = table.getElementsByTagName("tr").length;
+    if (rows > 10){
+        alert("You reached the maximimum of 10 entries! Please delete one entry or buy the premium package.");
+        return false
+    }
+    else {return true}
+}
 function checkEmptyInput() {
     var isEmpty = false;
     var date = document.getElementById("date").value;
@@ -69,9 +76,9 @@ function checkEmptyInput() {
 
 // function to add a row to the HTML file
 
-if (btn1) {
+if (btn1) { 
     btn1.onclick = function addRow() {
-        if (!checkEmptyInput()) {
+        if (!checkEmptyInput() && checkTable()) {
 
             var date = document.getElementById("date").value;
             var location = document.getElementById("location").value;
@@ -142,15 +149,14 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     cell6.innerHTML = comments;
     for (var i = 1; i < table.rows.length; i++) { // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
         table.rows[i].onclick = function () {
-            console.log(this.rowIndex)
             //get the selected row index
             rIndex = this.rowIndex;
-            date = this.cells[0].innerHTML;
-            location = this.cells[1].innerHTML;
-            category = this.cells[2].innerHTML;
-            distance = this.cells[3].innerHTML;
-            finishTime = this.cells[4].innerHTML;
-            comments = this.cells[5].innerHTML;
+            document.getElementById("date").value = this.cells[0].innerHTML;
+            document.getElementById("location").value = this.cells[1].innerHTML;
+            document.getElementById("category").value = this.cells[2].innerHTML;
+            document.getElementById("distance").value = this.cells[3].innerHTML;
+            document.getElementById("finishTime").value = this.cells[4].innerHTML;
+            document.getElementById("comments").value = this.cells[5].innerHTML;
 
         };
     }
@@ -170,7 +176,7 @@ if (btn2) {
         document.getElementById("comments").value = "";
 
 
-        trackings.splice(rIndex, 1);
+        trackings.splice(rIndex-1, 1);
         localStorage.setItem('trackings', JSON.stringify(trackings));
 
 
