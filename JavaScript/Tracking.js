@@ -26,8 +26,7 @@ for (var i = 0; i < users.length; i++) {
 }
 
 var btn1 = document.getElementById('btn1');
-// var btn2 = document.getElementById('btn2');
-// var btn3 = document.getElementById('btn3');
+var btn2 = document.getElementById('btn2');
 
 // check the empty input and in case it is true, return the alert that something needs to be filled in
 // also possible here to do instead of "else if" a "switch" statement!!
@@ -73,13 +72,6 @@ function checkEmptyInput() {
 if (btn1) {
     btn1.onclick = function addRow() {
         if (!checkEmptyInput()) {
-            var newRow = table.insertRow(table.length);
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            var cell6 = newRow.insertCell(5);
 
             var date = document.getElementById("date").value;
             var location = document.getElementById("location").value;
@@ -87,7 +79,7 @@ if (btn1) {
             var distance = document.getElementById("distance").value;
             var finishTime = document.getElementById("finishTime").value;
             var comments = document.getElementById("comments").value;
-            
+            fillRowDb(date, location, category, distance, finishTime, comments)
             var tracking = {
                 user: activeUser,
                 date: date,
@@ -102,13 +94,7 @@ if (btn1) {
 
             localStorage.setItem('trackings', JSON.stringify(trackings));
 
-            cell1.innerHTML = date;
-            cell2.innerHTML = location;
-            cell3.innerHTML = category;
-            cell4.innerHTML = distance;
-            cell5.innerHTML = finishTime;
-            cell6.innerHTML = comments;
-
+           
 
             // call the function to set the event to the new row --> basically we are adding out input here to the table
             fillRow();
@@ -154,6 +140,7 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     cell6.innerHTML = comments;
     for (var i = 1; i < table.rows.length; i++) { // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
         table.rows[i].onclick = function () {
+            console.log(this.rowIndex)
             //get the selected row index
             rIndex = this.rowIndex;
             date = this.cells[0].innerHTML;
@@ -169,28 +156,8 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
 // call the function that it will do its work
 fillRow();
 
-/* if (btn2) {
-    btn2.onclick = function editRow() {
-        var date = document.getElementById("date").value;
-        var location = document.getElementById("location").value;
-        var category = document.getElementById("category").value;
-        var distance = document.getElementById("distance").value;
-        var finishTime = document.getElementById("finishTime").value;
-        var comments = document.getElementById("comments").value;
-
-        if (!checkEmptyInput()) {
-            table.rows[rIndex].cells[0].innerHTML = date;
-            table.rows[rIndex].cells[1].innerHTML = location;
-            table.rows[rIndex].cells[2].innerHTML = category;
-            table.rows[rIndex].cells[3].innerHTML = distance;
-            table.rows[rIndex].cells[4].innerHTML = finishTime;
-            table.rows[rIndex].cells[5].innerHTML = comments;
-        }
-    }
-}
-
-if (btn3) {
-    btn3.onclick = function removeRow() {
+if (btn2) {
+    btn2.onclick = function removeRow() {
         table.deleteRow(rIndex);
         // clear input text for the row which have been chosen by pushing the remove
         document.getElementById("date").value = "";
@@ -199,6 +166,11 @@ if (btn3) {
         document.getElementById("distance").value = "";
         document.getElementById("finishTime").value = "";
         document.getElementById("comments").value = "";
+
+
+        trackings.splice(rIndex, 1);
+        localStorage.setItem('trackings', JSON.stringify(trackings));
+
+
     }
 }
-*/
