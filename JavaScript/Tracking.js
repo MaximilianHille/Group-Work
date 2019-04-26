@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 var rIndex;
 var table = document.getElementById("table");
 
-for (var i = 0; i < users.length; i++) {
+/* for (var i = 0; i < users.length; i++) {
     if (users[i].username == activeUser) {
         users[i].tracking = table.innerHTML
     }
-}
+}*/
 
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
@@ -79,7 +79,9 @@ if (btn1) {
             var distance = document.getElementById("distance").value;
             var finishTime = document.getElementById("finishTime").value;
             var comments = document.getElementById("comments").value;
+
             fillRowDb(date, location, category, distance, finishTime, comments)
+
             var tracking = {
                 user: activeUser,
                 date: date,
@@ -94,7 +96,7 @@ if (btn1) {
 
             localStorage.setItem('trackings', JSON.stringify(trackings));
 
-           
+
 
             // call the function to set the event to the new row --> basically we are adding out input here to the table
             fillRow();
