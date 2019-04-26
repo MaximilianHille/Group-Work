@@ -56,6 +56,8 @@ if (login) {
         for (i = 0; i < users.length; i++) {
             if (username === users[i].username && password === users[i].password) {
                 alert("Welcome back " + username + "!")
+                activeUser = username
+                localStorage.setItem('activeUser', JSON.stringify(activeUser))
                 document.location.href = "Activity.html";
                 return;
             }
@@ -70,9 +72,6 @@ if (login) {
         else {
             alert("Wrong username or password! You have " + counter + " attempt(s) left!");
             counter--;
-        }
-
-        activeUser = username.value
-        localStorage.setItem('activeUser', JSON.stringify(activeUser))
+        }   
     }
 }
