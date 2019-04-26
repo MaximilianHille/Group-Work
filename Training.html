@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Training calculator</title>
-        
-        <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
-    </head>
-        <font face="verdana">
-            <body>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Training calculator</title>
+
+    <link href="/Users/JakobMihoubi/Desktop/P/style1.css" rel="stylesheet" type="text/css">
+</head>
+<font face="verdana">
+
+    <body>
+        <div>
+            <form>
                 <h1>Calculate your training here.</h1>
-                    <p>Get the split times for your training on the track.</p>
+                <p>Get the split times for your training on the track.</p>
                 <h2>Running Pace Caluculator</h2>
                 <h3>Type in the available information.</h3>
-                    <p>Distance: 
-                        <input type="number" placeholder="meters" id="distance"> meters</p>
-                    <p>Time:    
-                        <input type="text" placeholder="hours" id="hours"> :
-                        <input type="text" placeholder="minutes" id="minutes"> : 
-                        <input type="text" placeholder="seconds" id="seconds"></p>
+                <p>Distance:
+                    <input type="number" placeholder="meters" id="distance"> meters</p>
+                <p>Time:
+                    <input type="text" placeholder="hours" id="hours"> :
+                    <input type="text" placeholder="minutes" id="minutes"> :
+                    <input type="text" placeholder="seconds" id="seconds"></p>
 
                 <input type="button" id="calculateBtn" value="Calculate pace">
                 <input type="reset" value="Reset">
 
-                    <p id="totalTime"></p>
-                    <p id="pace1000"></p>
-                    <p id="pace400"></p>
-                    <p id="pace100"></p>
-            </body>
-        </font>
-        
-        <script src="./JavaScript/Training.js"></script>
+                <p id="totalTime"></p>
+                <p id="pace1000"></p>
+                <p id="pace400"></p>
+                <p id="pace100"></p>
+            </form>
+        </div>
+
+    </body>
+</font>
+
+<script src="./JavaScript/Training.js"></script>
 
 </html>
