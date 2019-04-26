@@ -149,26 +149,9 @@ if (btn1) {
 // get the table by its id 
 // create a new row and cells 
 // get value from input text
-// set the values into row cell`s
-
-// this is the function in order to display selected row data into input text
-function fillRow() {
-    for (var i = 1; i < table.rows.length; i++) { // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
-        table.rows[i].onclick = function () {
-            //get the selected row index
-            rIndex = this.rowIndex;
-            document.getElementById("date").value = this.cells[0].innerHTML;
-            document.getElementById("location").value = this.cells[1].innerHTML;
-            document.getElementById("category").value = this.cells[2].innerHTML;
-            document.getElementById("distance").value = this.cells[3].innerHTML;
-            document.getElementById("finishTime").value = this.cells[4].innerHTML;
-            document.getElementById("comments").value = this.cells[5].innerHTML;
-
-        };
-    }
-}
-
 function fillRowDb(date, location, category, distance, finishTime, comments) {
+    
+    // this is what creates the cells
     var newRow = table.insertRow(table.length);
     var cell1 = newRow.insertCell(0);
     var cell2 = newRow.insertCell(1);
@@ -176,13 +159,19 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     var cell4 = newRow.insertCell(3);
     var cell5 = newRow.insertCell(4);
     var cell6 = newRow.insertCell(5);
+    
+    // set the values into row cell`s
+    // this is what goes into the cells
     cell1.innerHTML = date;
     cell2.innerHTML = location;
     cell3.innerHTML = category;
     cell4.innerHTML = distance;
     cell5.innerHTML = finishTime;
     cell6.innerHTML = comments;
-    for (var i = 1; i < table.rows.length; i++) { // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
+    
+    // this is the function in order to display selected row data into input text
+    // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
+    for (var i = 1; i < table.rows.length; i++) { 
         table.rows[i].onclick = function () {
             //get the selected row index
             rIndex = this.rowIndex;
@@ -196,11 +185,12 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
         };
     }
 }
-// call the function that it will do its work
-fillRow();
 
+// the button we created in a variable for removing on table row
 if (btn2) {
     btn2.onclick = function removeRow() {
+        
+        // we are getting the selected row by its index
         table.deleteRow(rIndex);
         // clear input text for the row which have been chosen by pushing the remove
         document.getElementById("date").value = "";
@@ -210,10 +200,11 @@ if (btn2) {
         document.getElementById("finishTime").value = "";
         document.getElementById("comments").value = "";
 
-
+        // the table row which has been removed will also be removed from the local storage
+        // we are doing this through updating the array
         trackings.splice(rIndex-1, 1);
+        
+        // and then updating the local storage with the new/updated array
         localStorage.setItem('trackings', JSON.stringify(trackings));
-
-
     }
 }
