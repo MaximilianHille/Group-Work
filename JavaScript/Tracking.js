@@ -10,7 +10,7 @@ var activeUser = JSON.parse(localStorage.getItem('activeUser'));
 // on load of our tracking page we are trying to load our content in the page for each active User
 // we are calling a function and telling it:
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // if the retrieved data from above (var trackings) is empty (null) then start an empty array with trackings (empty [])
     if (trackings === null) {
         trackings = [];
@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // the tracking data is assigned to each user seperately and can be retrieved through the unique identifier "activeUser"
     else {
         trackings.forEach(function (tracking) {
-            if (tracking.user == activeUser) {
-                
+            if (tracking.activeUser == activeUser) {
+
                 // calling the function "fillRowDb" which is declared later and pushing data into the array
                 fillRowDb(tracking.date, tracking.location, tracking.category, tracking.distance, tracking.finishTime, tracking.comments);
             }
@@ -40,28 +40,28 @@ var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 
 // we are creating a function in order to check whether the number of trackings exceed 10
-function checkTable () {
-    
+function checkTable() {
+
     // we are creating a variable (this time local because we do not need it anymore outside) and assigning it the table row length
     var rows = table.getElementsByTagName("tr").length;
-    
+
     // in case this variable is bigger 10, we alert and tell him/her to delete a row
-    if (rows > 10){
+    if (rows > 10) {
         alert("You reached the maximimum of 10 entries! Please delete one entry or buy the premium package.");
         return false
     }
     // we return true and the process can go on and the other functions may be called (down)
-    else {return true}
+    else { return true }
 }
 
 // check the empty input and in case it is true, return the alert that something needs to be filled in the input fields
 // also possible here to do instead of "else if" a "switch" statement!!
 function checkEmptyInput() {
-    
+
     // creating the variable isEmpty and assigning it the boolean "false" for later use
     // could most likely also have been done the other way round
     var isEmpty = false;
-    
+
     // we are creating variables and assigning them the values of the input fields
     var date = document.getElementById("date").value;
     var location = document.getElementById("location").value;
@@ -102,9 +102,9 @@ function checkEmptyInput() {
 
 // taking the variable we created and assigning it a function on click
 // function to add a row to the HTML file
-if (btn1) { 
+if (btn1) {
     btn1.onclick = function addRow() {
-        
+
         // in the first step we check that checkEmptyInput is NOT true (which means it is false) and everything is inserted correctly
         // and also that the checkTable function is true 
         if (!checkEmptyInput() && checkTable()) {
@@ -124,24 +124,24 @@ if (btn1) {
 
             // we are creating a variable called tracking and creating an array/object with the necessary values
             // in order to identify and save trackings
-            var tracking = {
+            /*var tracking = {
                 user: activeUser,
                 date: date,
                 location: location,
                 category: category,
                 distance: distance,
                 finishTime: finishTime,
-                comments: comments
-            };
+                comments: comments 
+        };*/
 
             //we are pushing new trackings into the array tracking (the variable we created)
-            trackings.push(tracking);
+            //trackings.push(tracking);
+
+            trackings.push(new Tracking(activeUser, date, location, category, distance, finishTime, comments));
+
 
             // and push them into local storage with the key "trackings" 
             localStorage.setItem('trackings', JSON.stringify(trackings));
-
-            // call the function to set the event to the new row --> basically we are adding out input here to the table
-            fillRow();
         }
     }
 }
@@ -150,7 +150,7 @@ if (btn1) {
 // create a new row and cells 
 // get value from input text
 function fillRowDb(date, location, category, distance, finishTime, comments) {
-    
+
     // this is what creates the cells
     var newRow = table.insertRow(table.length);
     var cell1 = newRow.insertCell(0);
@@ -159,7 +159,7 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     var cell4 = newRow.insertCell(3);
     var cell5 = newRow.insertCell(4);
     var cell6 = newRow.insertCell(5);
-    
+
     // set the values into row cell`s
     // this is what goes into the cells
     cell1.innerHTML = date;
@@ -168,10 +168,10 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     cell4.innerHTML = distance;
     cell5.innerHTML = finishTime;
     cell6.innerHTML = comments;
-    
+
     // this is the function in order to display selected row data into input text
     // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
-    for (var i = 1; i < table.rows.length; i++) { 
+    for (var i = 1; i < table.rows.length; i++) {
         table.rows[i].onclick = function () {
             //get the selected row index
             rIndex = this.rowIndex;
@@ -189,7 +189,7 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
 // the button we created in a variable for removing on table row
 if (btn2) {
     btn2.onclick = function removeRow() {
-        
+
         // we are getting the selected row by its index
         table.deleteRow(rIndex);
         // clear input text for the row which have been chosen by pushing the remove
@@ -202,8 +202,8 @@ if (btn2) {
 
         // the table row which has been removed will also be removed from the local storage
         // we are doing this through updating the array
-        trackings.splice(rIndex-1, 1);
-        
+        trackings.splice(rIndex - 1, 1);
+
         // and then updating the local storage with the new/updated array
         localStorage.setItem('trackings', JSON.stringify(trackings));
     }
