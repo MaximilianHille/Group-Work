@@ -2,6 +2,7 @@
 // we designed the variables globally (global scope) because we need them not only in one function (local scope)
 // we need them outside or inside of different functions (see below)
 var button = document.getElementById('calculateBtn');
+var reset = document.getElementById('reset');
 var paceTotalTime = document.getElementById('totalTime');
 var paceText1000 = document.getElementById('pace1000');
 var paceText400 = document.getElementById('pace400');
@@ -81,4 +82,11 @@ if(button) {
         paceText400.textContent = "You should pass each 400 meter mark after " + paceMinutes400 + ":" + paceSeconds400 + " minutes.",
         paceText100.textContent = "You should pass each 100 meter mark after " + paceSeconds100 + " seconds.";
     }
+}
+
+reset.onclick = function() {
+    paceTotalTime.textContent = "";
+    paceText1000.textContent = "";
+    paceText400.textContent = "";
+    paceText100.textContent = "";
 }
