@@ -1,6 +1,6 @@
 // we are creating our user class for each user/new user
 class User {
-    
+
     // The constructor for our class, which will allow us to create new objects of our class
     // this is giving us 2 options:
     // 1. create hard coded users as seen in our database and assign them the properties written in the constructor
@@ -11,8 +11,8 @@ class User {
         this.email = email;
         this.username = username;
         this.password = password;
-    // tracking is currently "null" because there is nothing inside yet
-    // as soon as trackings are saved to a current user they will be assigned to the tracking property
+        // tracking is currently "null" because there is nothing inside yet
+        // as soon as trackings are saved to a current user they will be assigned to the tracking property
         this.tracking = null;
     }
 }
