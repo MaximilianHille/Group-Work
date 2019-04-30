@@ -59,6 +59,8 @@ if (register) {
                 return false;
             }
         }
+
+        alert("Registration successful. Welcome " + inputUsername.value + "!")
         
         // we are pushing the new registered user into our database and user class (which we created)
         // we are just saving here the last name, username and password
