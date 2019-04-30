@@ -162,3 +162,4 @@ reset2.onclick = function() {
     paceText.textContent = "";
     timeText.textContent = "";
     splitTimeText.textContent = "";
+}
