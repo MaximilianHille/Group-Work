@@ -3,6 +3,8 @@
 // we need them outside or inside of different functions (see below)
 var button1 = document.getElementById('calculate_btn1');
 var button2 = document.getElementById('calculate_btn2');
+var reset1 = document.getElementById('reset1');
+var reset2 = document.getElementById('reset2');
 var paceText = document.getElementById('pace');
 var timeText = document.getElementById('time');
 var splitTimeText = document.getElementById('split');
@@ -87,6 +89,13 @@ if(button1) {
     }
 };
 
+reset1.onclick = function() {
+    paceText.textContent = "";
+    timeText.textContent = "";
+    splitTimeText.textContent = "";
+
+    }
+
 if(button2) {
     button2.onclick = function() {
     
@@ -148,3 +157,8 @@ if(button2) {
 
     }
 }
+
+reset2.onclick = function() {
+    paceText.textContent = "";
+    timeText.textContent = "";
+    splitTimeText.textContent = "";
