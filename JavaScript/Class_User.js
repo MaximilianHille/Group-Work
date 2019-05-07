@@ -1,4 +1,6 @@
 // we are creating our user class for each user/new user
+// Classes are homogeneus categories of objects that share patterns, structrues
+
 class User {
 
     // The constructor for our class, which will allow us to create new objects of our class
