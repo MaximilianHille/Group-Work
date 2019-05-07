@@ -102,47 +102,33 @@ function checkEmptyInput() {
 
 // taking the variable we created and assigning it a function on click
 // function to add a row to the HTML file
-if (btn1) {
-    btn1.onclick = function addRow() {
+btn1.onclick = function addRow() {
 
-        // in the first step we check that checkEmptyInput is NOT true (which means it is false) and everything is inserted correctly
-        // and also that the checkTable function is true 
-        if (!checkEmptyInput() && checkTable()) {
+    // in the first step we check that checkEmptyInput is NOT true (which means it is false) and everything is inserted correctly
+    // and also that the checkTable function is true 
+    if (!checkEmptyInput() && checkTable()) {
 
-            // we create the variables and assign it the values of the input fields
-            // this time the input fields are taken completely which is why we could not create the variable in the beginning globally
-            var date = document.getElementById("date").value;
-            var location = document.getElementById("location").value;
-            var category = document.getElementById("category").value;
-            var distance = document.getElementById("distance").value;
-            var finishTime = document.getElementById("finishTime").value;
-            var comments = document.getElementById("comments").value;
+        // we create the variables and assign it the values of the input fields
+        // this time the input fields are taken completely which is why we could not create the variable in the beginning globally
+        var date = document.getElementById("date").value;
+        var location = document.getElementById("location").value;
+        var category = document.getElementById("category").value;
+        var distance = document.getElementById("distance").value;
+        var finishTime = document.getElementById("finishTime").value;
+        var comments = document.getElementById("comments").value;
 
-            // we are calling the function fillRowDb and give it the parameters which are written in brackets
-            // which we beforehand declared as variables
-            fillRowDb(date, location, category, distance, finishTime, comments)
+        // we are calling the function fillRowDb and give it the parameters which are written in brackets
+        // which we beforehand declared as variables
+        fillRowDb(date, location, category, distance, finishTime, comments)
 
-            // we are creating a variable called tracking and creating an array/object with the necessary values
-            // in order to identify and save trackings
-            /*var tracking = {
-                user: activeUser,
-                date: date,
-                location: location,
-                category: category,
-                distance: distance,
-                finishTime: finishTime,
-                comments: comments 
-        };*/
+        //we are pushing new trackings into the array tracking (the variable we created)
+        //trackings.push(tracking);
 
-            //we are pushing new trackings into the array tracking (the variable we created)
-            //trackings.push(tracking);
-
-            trackings.push(new Tracking(activeUser, date, location, category, distance, finishTime, comments));
+        trackings.push(new Tracking(activeUser, date, location, category, distance, finishTime, comments));
 
 
-            // and push them into local storage with the key "trackings" 
-            localStorage.setItem('trackings', JSON.stringify(trackings));
-        }
+        // and push them into local storage with the key "trackings" 
+        localStorage.setItem('trackings', JSON.stringify(trackings));
     }
 }
 
@@ -187,24 +173,22 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
 }
 
 // the button we created in a variable for removing on table row
-if (btn2) {
-    btn2.onclick = function removeRow() {
+btn2.onclick = function removeRow() {
 
-        // we are getting the selected row by its index
-        table.deleteRow(rIndex);
-        // clear input text for the row which have been chosen by pushing the remove
-        document.getElementById("date").value = "";
-        document.getElementById("location").value = "";
-        document.getElementById("category").value = "";
-        document.getElementById("distance").value = "";
-        document.getElementById("finishTime").value = "";
-        document.getElementById("comments").value = "";
+    // we are getting the selected row by its index
+    table.deleteRow(rIndex);
+    // clear input text for the row which have been chosen by pushing the remove
+    document.getElementById("date").value = "";
+    document.getElementById("location").value = "";
+    document.getElementById("category").value = "";
+    document.getElementById("distance").value = "";
+    document.getElementById("finishTime").value = "";
+    document.getElementById("comments").value = "";
 
-        // the table row which has been removed will also be removed from the local storage
-        // we are doing this through updating the array
-        trackings.splice(rIndex - 1, 1);
+    // the table row which has been removed will also be removed from the local storage
+    // we are doing this through updating the array
+    trackings.splice(rIndex - 1, 1);
 
-        // and then updating the local storage with the new/updated array
-        localStorage.setItem('trackings', JSON.stringify(trackings));
-    }
+    // and then updating the local storage with the new/updated array
+    localStorage.setItem('trackings', JSON.stringify(trackings));
 }
