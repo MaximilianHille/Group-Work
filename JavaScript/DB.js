@@ -12,9 +12,9 @@ function getSavedUsers() {
   // this means we are able to log in with our users
   if (localStorage.getItem('user') === null) {
     users = [
-      new User("Maximilian", "Hille", "maximilian-hille@t-online.de", "mhille", "qwertz1234", null),
-      new User("Nadia", "Boujari", "nboujari@gmail.com", "nboujari", "1234qwertz", null),
-      new User("Kristina", "Bilkova", "kbilkova@gmail.com", "kbilkova", "qwerty1234", null),
+      new User("Maximilian", "Hille", "maximilian-hille@t-online.de", "mhille", "qwertz1234"),
+      new User("Nadia", "Boujari", "nboujari@gmail.com", "nboujari", "1234qwertz"),
+      new User("Kristina", "Bilkova", "kbilkova@gmail.com", "kbilkova", "qwerty1234"),
     ];
   }
 
