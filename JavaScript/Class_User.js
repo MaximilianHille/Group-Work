@@ -13,7 +13,5 @@ class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        // tracking is currently "null" because there is nothing inside yet
-        // as soon as trackings are saved to a current user they will be assigned to the tracking property
     }
 }
