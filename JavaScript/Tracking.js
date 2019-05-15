@@ -145,8 +145,6 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     var cell5 = newRow.insertCell(4);
     var cell6 = newRow.insertCell(5);
 
-    // set the values into row cell`s
-    // this is what goes into the cells
     cell1.innerHTML = date;
     cell2.innerHTML = location;
     cell3.innerHTML = category;
@@ -154,7 +152,7 @@ function fillRowDb(date, location, category, distance, finishTime, comments) {
     cell5.innerHTML = finishTime;
     cell6.innerHTML = comments;
 
-    // this is the function in order to display selected row data into input text
+    // this is the function in order to display selected row data into input text fields on the right when clicking on it
     // here we are setting var i = 1 because we do not want people tp be able to edit the first row!!
     for (var i = 1; i < table.rows.length; i++) {
         table.rows[i].onclick = function () {
