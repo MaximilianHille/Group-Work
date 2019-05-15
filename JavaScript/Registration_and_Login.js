@@ -1,6 +1,5 @@
 // assigning the function we created in our other file DB.js to a variable called users
-// we are calling the function in the variable since we need it in order to retrieve the saved users 
-// or push the saved users in the database
+// we are calling the function in the variable since we need it in order to (a) retrieve the saved users or (b) push the saved users in the database
 var users = getSavedUsers();
 
 // our button called "create user account" binded to the variable "register"
@@ -47,8 +46,8 @@ register.onclick = function () {
         return false;
     }
 
-    // we are looping over all the users in the database/local storage and 
-    // another form of a "for loop"
+    // we are looping over all the users in the database/local storage 
+    // another form of a "for loop" with creating a variable in the parameters
     // check whether the username is already occupied
     for (var user of users) {
         if (inputUsername.value == user.username) {
@@ -62,7 +61,9 @@ register.onclick = function () {
     // we are pushing the new registered user into our database and user class (which we created)
     // we are just saving here the last name, username and password
     // all the others are "null" since we are not saving the information of it
-    // we are pushing the user into local storage with the key "user" and stringifying it
+    // we are pushing the user into local storage with the key "user" and are stringifying it
+    // we are stringifying since local storage may just store strings, but not the objects
+    // when retrieving the local storage, we parse it in order to build up the onject again out of the string
     users.push(new User(null, inputLastName.value, null, inputUsername.value, inputPassword.value, null));
     localStorage.setItem('user', JSON.stringify(users));
 
@@ -75,7 +76,7 @@ register.onclick = function () {
     document.location.href = "Activity.html";
 }
 
-// this is the right part of our landing page
+// this is the right hand part of our landing page
 // we are taking the created variable "login" and assigning a function to it on click
 login.onclick = function () {
 
