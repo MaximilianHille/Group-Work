@@ -11,8 +11,7 @@ var paceText100 = document.getElementById('pace100');
 
 button.onclick = function () {
 
-    // we are creating as the first step a bunch of variables to which we assign the different values
-    // from the select or input fields
+    // we are creating as the first step a bunch of variables to which we assign the different values from the select or input fields
     // the parseFloat() function parses a string and returns a floating point number
     // This function determines if the first character in the specified string is a number
     // If it is, it parses the string until it reaches the end of the number, and returns the number as a number, not as a string
@@ -43,7 +42,7 @@ button.onclick = function () {
     // switch .. case 1, case 2, etc..
     // what are we doing here: the different "if statements" are following the same purpose
     // --> in case our calculations would output a number lower 10, a 0 will be displayed in front of the numbers
-    // so i.e. instead of 1:12:3 which would be now 1 hour, 12 minutes and 30 seconds (which is WRONG!)
+    // so i.e. instead of 1:12:3 which would be now 1 hour, 12 minutes and 30 seconds (which is WRONG!),
     // it will display 01:12:03
     // we change the previously created variables a new value with a 0 in front of the initial variable
     if (hours < 10) {
