@@ -35,11 +35,11 @@ var rIndex;
 var table = document.getElementById("table");
 
 // creating 2 variables and assigning our buttons from the HTML document to them for easy use later
-// so that we just need to call thge variables (short) and not the whole "sentence"
+// so that we just need to call the variables (short) and not the whole "sentence"
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 
-// we are creating a function in order to check whether the number of trackings exceed 10
+// we are creating a function in order to check whether the number of trackings exceeds 10
 function checkTable() {
 
     // we are creating a variable (this time local because we do not need it anymore outside) and assigning it the table row length
@@ -121,8 +121,8 @@ btn1.onclick = function addRow() {
         // which we beforehand declared as variables
         fillRowDb(date, location, category, distance, finishTime, comments)
 
-        //we are pushing new trackings into the array tracking (the variable we created)
-        //trackings.push(tracking);
+        // we are pushing new trackings into our trackings class (the variable we created)
+        // trackings.push(tracking);
 
         trackings.push(new Tracking(activeUser, date, location, category, distance, finishTime, comments));
 
@@ -132,9 +132,8 @@ btn1.onclick = function addRow() {
     }
 }
 
-// get the table by its id 
-// create a new row and cells 
-// get value from input text
+// we get the table by its id and create in it a new row and cells
+// the text written in the table is to be get from the value from input text
 function fillRowDb(date, location, category, distance, finishTime, comments) {
 
     // this is what creates the cells
